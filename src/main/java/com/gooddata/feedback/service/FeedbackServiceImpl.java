@@ -19,8 +19,13 @@ public class FeedbackServiceImpl implements FeedbackService {
 		return feedbackRepository.findOne(id);
 	}
 
+        @Override
+	public List<Feedback> getFeedbackByName(String name) {
+		return feedbackRepository.findByName(name);
+	}
+        
 	@Override
-	public List<Feedback> getAllFeedbacks() {
+	public List<Feedback> getFeedbacks() {
 		return feedbackRepository.findAll();
 	}
 
