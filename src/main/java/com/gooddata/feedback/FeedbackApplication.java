@@ -22,8 +22,8 @@ public class FeedbackApplication {
         @Bean
 	public CommandLineRunner setup(FeedbackRepository feedbackRepository) {
 		return (args) -> {
-			feedbackRepository.save(new Feedback("Initial1", "Summary1"));
-			feedbackRepository.save(new Feedback("Initial2", "Summary2"));
+			feedbackRepository.save(new Feedback("name1", "Message1"));
+			feedbackRepository.save(new Feedback("name2", "Message2"));
 			LOGGER.info("The sample data has been generated");
 		};
 	}

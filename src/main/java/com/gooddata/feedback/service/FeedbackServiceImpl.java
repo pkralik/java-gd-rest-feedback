@@ -15,8 +15,8 @@ public class FeedbackServiceImpl implements FeedbackService {
 	FeedbackRepository feedbackRepository; 
 
 	@Override
-	public Feedback getFeedbackById(Long id) {
-		return feedbackRepository.findOne(id);
+	public Feedback createFeedback(String name, String summary) {
+		return feedbackRepository.save(new Feedback(name, summary));
 	}
 
         @Override

@@ -21,18 +21,12 @@ public class FeedbackController {
         @Autowired
         private FeedbackService feedbackService;
 
-        // -------------------Retrieve All Feedbacks---------------------------------------------
-        @RequestMapping(value = "/feedback", method = RequestMethod.GET)
-        public List<Feedback> getFeedbacks() {
-		return feedbackService.getFeedbacks();
+        // -------------------Create a Feedback------------------------------------------------------
+        @RequestMapping(value = "/feedback", method = RequestMethod.POST)
+        public Feedback createFeedback(@PathVariable("name") String name, @PathVariable("summary") String summary) {
+                LOGGER.info("Creating Feedback : {} {}", name, summary);
+                return feedbackService.createFeedback(name, summary);
         }
-
-        // -------------------Retrieve Single Feedback-------------------------------------------
-        @RequestMapping(value = "/feedbackId/{id}", method = RequestMethod.GET)
-        public Feedback getFeedback(@PathVariable("id") long id) {
-                LOGGER.info("Fetching Feedback with id {}", id);
-		return feedbackService.getFeedbackById(id);
-	}
 
         // -------------------Retrieve Single Feedback-------------------------------------------
         @RequestMapping(value = "/feedback/{name}", method = RequestMethod.GET)
@@ -40,11 +34,10 @@ public class FeedbackController {
                 LOGGER.info("Fetching Feedback with name {}", name);
 		return feedbackService.getFeedbackByName(name);
 	}
-        
-        // -------------------Create a Feedback------------------------------------------------------
-        @RequestMapping(value = "/feedback", method = RequestMethod.POST)
-        public Feedback createFeedback(@PathVariable("name") String name, @PathVariable("summary") String summary) {
-                LOGGER.info("Creating Feedback : {} {}", name, summary);
-                return new Feedback("Initial1", "Summary1");
+
+        // -------------------Retrieve All Feedbacks---------------------------------------------
+        @RequestMapping(value = "/feedback", method = RequestMethod.GET)
+        public List<Feedback> getFeedbacks() {
+		return feedbackService.getFeedbacks();
         }
 }
