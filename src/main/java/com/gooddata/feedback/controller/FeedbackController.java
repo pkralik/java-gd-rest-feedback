@@ -28,7 +28,7 @@ public class FeedbackController {
         }
 
         // -------------------Retrieve Single Feedback-------------------------------------------
-        @RequestMapping(value = "/feedback/{id}", method = RequestMethod.GET)
+        @RequestMapping(value = "/feedbackId/{id}", method = RequestMethod.GET)
         public Feedback getFeedback(@PathVariable("id") long id) {
                 LOGGER.info("Fetching Feedback with id {}", id);
 		return feedbackService.getFeedbackById(id);
