@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import com.gooddata.feedback.model.Feedback;
 import com.gooddata.feedback.repository.FeedbackRepository;
 
+/**
+ * Feedback Service Implementation
+ */
 @Service("feedbackService")
 public class FeedbackServiceImpl implements FeedbackService {
 

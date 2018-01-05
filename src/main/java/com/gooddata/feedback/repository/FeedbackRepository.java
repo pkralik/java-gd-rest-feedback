@@ -7,6 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Feedback JPA repository
+ */
 @Repository("feedbackRepository")
 public interface FeedbackRepository extends JpaRepository<Feedback, Long> {
 

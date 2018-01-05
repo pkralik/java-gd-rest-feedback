@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+/**
+ * Feedback POJO
+ */
 @Entity
 public class Feedback implements Serializable {
 

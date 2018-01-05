@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Bean;
 import com.gooddata.feedback.model.Feedback;
 import com.gooddata.feedback.repository.FeedbackRepository;
 
+/**
+ * Feedback Application
+ */
 @SpringBootApplication
 public class FeedbackApplication {
 
