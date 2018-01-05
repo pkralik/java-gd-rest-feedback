@@ -23,6 +23,7 @@ public class Feedback implements Serializable {
 
     public Feedback() {
         super();
+        this.created = new Date();
     }
 
     public Feedback(String name, String summary) {

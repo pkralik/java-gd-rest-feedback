@@ -6,7 +6,7 @@ import com.gooddata.feedback.model.Feedback;
 
 public interface FeedbackService {
 
-    Feedback createFeedback(String name, String summary);
+    Feedback createFeedback(Feedback feedback);
 
     List<Feedback> getFeedbackByName(String name);
 
