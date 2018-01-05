@@ -10,8 +10,26 @@ mvn spring-boot:run
 
 ## Building the project
 
+Build Java application:
 ```
-mvn clean package && java -jar target/feedback-1.0.0-SNAPSHOT.jar
+mvn clean package
+```
+
+Build Docker image:
+```
+docker build --rm -t java-gd-rest-feedback .
+```
+
+## Running the application
+
+Run in Docker:
+```
+docker run -it --net host --rm -P --name java-gd-rest-feedback java-gd-rest-feedback
+```
+
+Run standalone:
+```
+java -jar target/feedback-1.0.0-SNAPSHOT.jar
 ```
 
 ## Running tests
