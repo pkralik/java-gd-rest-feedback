@@ -1,34 +1,48 @@
-# java-gd-rest-feedback
-Java RESTful Feedback service
+## About
 
-Requires JDK 8 to build
+Java Maven project with a RESTful Feedback API in Spring Boot.
 
-## Building JAR package
+## Runnning this project
 
-mvn clean package && java -jar target/feedback-1.0.0-SNAPSHOT.jar
-
-## Running REST Feedback service
-
+```
 mvn spring-boot:run
+```
+
+## Building the project
+
+```
+mvn clean package && java -jar target/feedback-1.0.0-SNAPSHOT.jar
+```
 
 ## Running tests
 
+```
 mvn clean verify
 
-## REST endpoints
+```
 
-### Listing of all feedbacks
+## Example commands
 
+Listing of all feedbacks:
+```
 curl http://localhost:8080/feedback
+```
 
-### Listing of feedbacks for a person name1
-
+Listing of feedbacks for a person name1:
+```
 curl http://localhost:8080/feedback/name1
+```
 
-### Creating a new feedback
-
+Creating a new feedback:
+```
 curl -i -X POST http://localhost:8080/feedback -H "Content-Type:application/json" -d '{  "name" : "frodo",  "summary" : "Baggins" }'
+```
 
-### REST service health
-
+Service health:
+```
 curl http://localhost:8080/health
+```
+
+## LICENSE
+
+The code is released under the BSD 3-Clause License. See LICENSE for details.
