@@ -15,29 +15,29 @@ import com.gooddata.feedback.service.FeedbackService;
 
 @RestController
 public class FeedbackController {
-	
-        private static final Logger LOGGER = LoggerFactory.getLogger(FeedbackController.class);
-        
-        @Autowired
-        private FeedbackService feedbackService;
 
-        // -------------------Create a Feedback------------------------------------------------------
-        @RequestMapping(value = "/feedback", method = RequestMethod.POST)
-        public Feedback createFeedback(@PathVariable("name") String name, @PathVariable("summary") String summary) {
-                LOGGER.info("Creating Feedback : {} {}", name, summary);
-                return feedbackService.createFeedback(name, summary);
-        }
+    private static final Logger LOGGER = LoggerFactory.getLogger(FeedbackController.class);
 
-        // -------------------Retrieve Single Feedback-------------------------------------------
-        @RequestMapping(value = "/feedback/{name}", method = RequestMethod.GET)
-        public List<Feedback> getFeedback(@PathVariable("name") String name) {
-                LOGGER.info("Fetching Feedback with name {}", name);
-		return feedbackService.getFeedbackByName(name);
-	}
+    @Autowired
+    private FeedbackService feedbackService;
 
-        // -------------------Retrieve All Feedbacks---------------------------------------------
-        @RequestMapping(value = "/feedback", method = RequestMethod.GET)
-        public List<Feedback> getFeedbacks() {
-		return feedbackService.getFeedbacks();
-        }
+    // -------------------Create a Feedback------------------------------------------------------
+    @RequestMapping(value = "/feedback", method = RequestMethod.POST)
+    public Feedback createFeedback(@PathVariable("name") String name, @PathVariable("summary") String summary) {
+        LOGGER.info("Creating Feedback : {} {}", name, summary);
+        return feedbackService.createFeedback(name, summary);
+    }
+
+    // -------------------Retrieve Single Feedback-------------------------------------------
+    @RequestMapping(value = "/feedback/{name}", method = RequestMethod.GET)
+    public List<Feedback> getFeedback(@PathVariable("name") String name) {
+        LOGGER.info("Fetching Feedback with name {}", name);
+        return feedbackService.getFeedbackByName(name);
+    }
+
+    // -------------------Retrieve All Feedbacks---------------------------------------------
+    @RequestMapping(value = "/feedback", method = RequestMethod.GET)
+    public List<Feedback> getFeedbacks() {
+        return feedbackService.getFeedbacks();
+    }
 }

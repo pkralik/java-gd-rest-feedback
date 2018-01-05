@@ -11,58 +11,57 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Feedback implements Serializable {
-	
-	@Id
-	@GeneratedValue
-	private Long id;
-	private String name;
-	private String summary;
-        @Column(nullable = false)
-        @Temporal(TemporalType.DATE)
-        private Date created;
-        
-	public Feedback() {
-		super();
-	}
 
-	public Feedback(String name, String summary) {
-		super();
-		this.name = name;
-		this.summary = summary;
-                this.created = new Date();
-	}
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String name;
+    private String summary;
+    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date created;
 
+    public Feedback() {
+        super();
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Feedback(String name, String summary) {
+        super();
+        this.name = name;
+        this.summary = summary;
+        this.created = new Date();
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getSummary() {
-		return summary;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setSummary(String summary) {
-		this.summary = summary;
-	}
+    public String getSummary() {
+        return summary;
+    }
 
-	public Date getCreated() {
-		return created;
-	}
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
 
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-	
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
 }

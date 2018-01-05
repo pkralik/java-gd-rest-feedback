@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository("feedbackRepository")
 public interface FeedbackRepository extends JpaRepository<Feedback, Long> {
-    
+
     List<Feedback> findByName(@Param("name") String name);
 }
