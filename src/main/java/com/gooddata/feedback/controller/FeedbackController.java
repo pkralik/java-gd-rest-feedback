@@ -29,7 +29,7 @@ public class FeedbackController {
     /**
      * Create new feedback.
      *
-     * @param feedback feedback to be created
+     * @param feedback to be created
      * @return created feedback (including very useful id)
      */
     @RequestMapping(method = RequestMethod.POST)
